@@ -30,3 +30,4 @@ git lfs install
 echo "[+] Pushing to target"
 git config --global push.followTags true
 git push "$DESTINATION_URL" --set-upstream "$TARGET_BRANCH"
+git push "$DESTINATION_URL" --tags
