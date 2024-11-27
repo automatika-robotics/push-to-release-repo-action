@@ -18,6 +18,9 @@ git --version
 echo "[+] Enable git lfs"
 git lfs install
 
+echo "[+] Adds github specific config exception"
+git config --global --add safe.directory /github/workspace
+
 echo "[+] Following files exist in current location:"
 ls -la
 
