@@ -35,5 +35,8 @@ else
     exit 1
 fi
 
+echo "[+] Applying github specific fix to push to external repos"
+git config --unset-all http.https://github.com/.extraheader
+
 echo "[+] Pushing to target"
 git push --follow-tags $DESTINATION_URL --set-upstream $TARGET_BRANCH
