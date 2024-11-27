@@ -1,0 +1,36 @@
+name: "Push to release"
+description: "Push (main) branch of the source respository to a destination release repository."
+inputs:
+  destination-username:
+    description: "Username of the destination repository owner."
+    required: true
+  destination-access-token:
+    description: "Access token for destination repository. Should be supplied through source repository secrets."
+  destination-repository:
+    description: "Complete destination repository name in the form (username/repo-name)."
+    required: true
+  git-server:
+    description: "Optional: Git server e.g. github.com or gitlab.com"
+    default: "github.com"
+    required: false
+  source-branch:
+    description: "Optional: Source repository branch. Defaults to main"
+    default: "main"
+    required: false
+  target-branch:
+    description: "Optional: Destination (release) repository branch. Defaults to main"
+    default: "main"
+    required: false
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - "${{ inputs.destination-username }}"
+    - "${{ inputs.destination-access-token }}"
+    - "${{ inputs.destination-repository }}"
+    - "${{ inputs.git-server }}"
+    - "${{ inputs.target-branch }}"
+branding:
+  icon: upload
+  color: green
