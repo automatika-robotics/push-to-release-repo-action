@@ -36,4 +36,4 @@ else
 fi
 
 echo "[+] Pushing to target"
-git push --follow-tags "$DESTINATION_URL" --set-upstream "$TARGET_BRANCH"
+git push --follow-tags $DESTINATION_URL --set-upstream $TARGET_BRANCH
