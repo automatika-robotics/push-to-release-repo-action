@@ -24,19 +24,16 @@ git config --global --add safe.directory /github/workspace
 echo "[+] Following files exist in current location:"
 ls -la
 
-git rev-parse --is-inside-work-tree
 # Check if in a git repository
-# if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]
-# then
-#     echo '[+] Found source repo: '$(pwd)
-# else
-#     echo "::error:: Source repository not found"
-#     echo "::error:: You can checkout the source repository using a github action in the previous step of this workflow as follow:"
-#     echo "::error:: actions/checkout@v4"
-#     exit 1
-# fi
+if [ -d .git ]
+then
+    echo '[+] Found source repo: '$(pwd)
+else
+    echo "::error:: Source repository not found"
+    echo "::error:: You can checkout the source repository using a github action in the previous step of this workflow as follow:"
+    echo "::error:: actions/checkout@v4"
+    exit 1
+fi
 
 echo "[+] Pushing to target"
-git config --global push.followTags true
-git push "$DESTINATION_URL" --set-upstream "$TARGET_BRANCH"
-git push "$DESTINATION_URL" --tags
+git push --follow-tags "$DESTINATION_URL" --set-upstream "$TARGET_BRANCH"
