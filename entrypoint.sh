@@ -13,7 +13,8 @@ TARGET_BRANCH="${5}"
 DESTINATION_URL="https://$DESTINATION_USERNAME:$ACCESS_TOKEN@$GIT_SERVER/$DESTINATION_REPOSITORY.git"
 
 # Check if in a git repository
-if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ] then
+if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]
+then
     echo 'Found source repo: '$(pwd)
 else
     echo "::error:: Source repository not found"
