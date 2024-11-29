@@ -54,7 +54,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push to Destination Repository
-      uses: automatika-robotics/push-to-release-action@v2
+      uses: automatika-robotics/push-to-release-repo@v2
       with:
         destination-username: "destination-user"
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
@@ -80,7 +80,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push to Destination Repository
-      uses: automatika-robotics/push-to-release-action@v2
+      uses: automatika-robotics/push-to-release-repo@v2
       with:
         destination-username: "destination-user"
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
@@ -111,7 +111,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push Documentation to Release
-      uses: automatika-robotics/push-to-release-action@v2
+      uses: automatika-robotics/push-to-release-repo@v2
       with:
         destination-username: 'destination-username'
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
