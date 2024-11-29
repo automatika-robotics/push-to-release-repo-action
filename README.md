@@ -54,14 +54,14 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push to Destination Repository
-      uses: automatika-robotics/push-to-release-action@v1
+      uses: automatika-robotics/push-to-release-action@v2
       with:
         destination-username: "destination-user"
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
         destination-repository: "destination-user/destination-repo"
 ```
 
-### Example 2: Advanced Usage
+### Example 2: Pushing a specific source branch to a specific destination branch
 
 This example demonstrates an advanced usage scenario where you want to push a specific branch (`release-candidate`) from your source repository to a different branch (`staging`) in the destination release repository hosted on `gitlab.com`.
 
@@ -80,7 +80,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push to Destination Repository
-      uses: automatika-robotics/push-to-release-action@v1
+      uses: automatika-robotics/push-to-release-action@v2
       with:
         destination-username: "destination-user"
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
@@ -90,3 +90,33 @@ jobs:
         target-branch: "staging"
 ```
 
+### Example 3: Pushing a specific folder from source
+
+This example assumes that you want to push only the contents of a specific folder (`docs/`) from your source repository to a target release repository:
+
+```yaml
+name: Push Documentation to Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push-to-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Source Repository
+      uses: actions/checkout@v4
+
+    - name: Push Documentation to Release
+      uses: automatika-robotics/push-to-release-action@v2
+      with:
+        destination-username: 'destination-username'
+        destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
+        destination-repository: 'username/release-repo'
+        source-folder: './docs/'  # Specifies the folder to push
+        commit-email: 'destination-username@github.com' # Optional, defaults to destination-username@git-server
+        commit-message: 'Push documentation updates to release' # Optional, customizes the commit message
+```
