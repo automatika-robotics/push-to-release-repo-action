@@ -13,14 +13,22 @@ inputs:
     description: "Optional: Git server e.g. github.com or gitlab.com"
     default: "github.com"
     required: false
-  source-branch:
-    description: "Optional: Source repository branch. Defaults to main"
-    default: "main"
+  source-folder:
+    description: "Optional: A particular folder in source repository. Defaults to ./"
+    default: "./"
     required: false
   target-branch:
     description: "Optional: Destination (release) repository branch. Defaults to main"
     default: "main"
     required: false
+  commit-email:
+    description: "Optional: Commit email. Only required if source folder is different from default. Defaults to destination-username@git-server"
+    required: false
+    default: ""
+  commit-message:
+    description: "Optional: Commit message. Only required if source folder is different from default. Defaults to: Push to release"
+    required: false
+    default: "Push to release"
 
 runs:
   using: docker
