@@ -1,6 +1,6 @@
 # push-to-release-repo
 
-This github action to push code from a source repo to a release repo. Useful when package distribution requires a separate release repository for running its automated actions. (e.g in case of ROS2 deb packages)
+This github action can be used to push code from a source repo to a release repo. Useful when package distribution requires a separate release repository for running its automated actions (e.g in case of ROS2 deb packages).
 
 ## Inputs
 
@@ -54,7 +54,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push to Destination Repository
-      uses: automatika-robotics/push-to-release-repo@v2
+      uses: automatika-robotics/push-to-release-repo-action@v2
       with:
         destination-username: "destination-user"
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
@@ -80,7 +80,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push to Destination Repository
-      uses: automatika-robotics/push-to-release-repo@v2
+      uses: automatika-robotics/push-to-release-repo-action@v2
       with:
         destination-username: "destination-user"
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
@@ -111,7 +111,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Push Documentation to Release
-      uses: automatika-robotics/push-to-release-repo@v2
+      uses: automatika-robotics/push-to-release-repo-action@v2
       with:
         destination-username: 'destination-username'
         destination-access-token: ${{ secrets.DESTINATION_ACCESS_TOKEN }}
