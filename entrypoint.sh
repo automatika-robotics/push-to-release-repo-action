@@ -34,7 +34,7 @@ then
 else
     echo "::error:: Source repository not found"
     echo "::error:: You can checkout the source repository using a github action in the previous step of this workflow as follow:"
-    echo "::error:: actions/checkout@v4"
+    echo "::error:: uses: actions/checkout@v4"
     exit 1
 fi
 

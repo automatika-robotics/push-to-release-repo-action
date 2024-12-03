@@ -7,6 +7,7 @@ inputs:
     required: true
   destination-access-token:
     description: "Access token for destination repository. Should be supplied through source repository secrets."
+    required: true
   destination-repository:
     description: "Complete destination repository name in the form (username/repo-name)."
     required: true
