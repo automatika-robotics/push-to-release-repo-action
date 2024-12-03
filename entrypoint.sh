@@ -89,4 +89,5 @@ then
 else
     echo "[+] Pushing to target"
     git push --no-thin --follow-tags $DESTINATION_URL --set-upstream $TARGET_BRANCH
+    git push --tags $DESTINATION_URL
 fi
