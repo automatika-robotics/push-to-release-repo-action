@@ -1,4 +1,4 @@
-name: "Push to release"
+name: "Push to release repo action"
 author: "Automatika Robotics"
 description: "Push (main) branch of the source respository to a destination release repository."
 inputs:
