@@ -1,6 +1,6 @@
-# push-to-release-repo
+# push-to-release-repo-action
 
-This github action can be used to push code from a source repo to a release repo. Useful when package distribution requires a separate release repository for running its automated actions (e.g in case of ROS2 deb packages).
+This github action can be used to push code from a source repo to a release repo. Useful when package distribution requires a separate release repository for running its automated actions.
 
 ## Inputs
 
@@ -120,3 +120,8 @@ jobs:
         commit-email: 'destination-username@github.com' # Optional, defaults to destination-username@git-server
         commit-message: 'Push documentation updates to release' # Optional, customizes the commit message
 ```
+## Contributions
+
+All contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue in the [repository](https://github.com/automatika-robotics/push-to-release-repo-action/issues).
+```
+
