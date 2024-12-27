@@ -123,5 +123,4 @@ jobs:
 ## Contributions
 
 All contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue in the [repository](https://github.com/automatika-robotics/push-to-release-repo-action/issues).
-```
 
